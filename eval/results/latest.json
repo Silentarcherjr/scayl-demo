@@ -1,0 +1,689 @@
+{
+  "run_at": "2026-10-07T22:25:11.862309+00:00",
+  "snapshot": "v1",
+  "hardware": "Linux x86_64 · x86_64 · Python 3.13.16",
+  "models": [
+    "ollama:qwen3:8b"
+  ],
+  "generation_modes": [
+    "cache",
+    "template"
+  ],
+  "metrics": {
+    "citation_coverage": {
+      "status": "medido",
+      "num": 45,
+      "den": 45,
+      "value": 1.0,
+      "scope": "Kept brief/script sentences with claim_ids, from generation_report; includes nonfactual disclaimer sentences in denominator. Social copy excluded by existing report. Not support-validity or human fact-checking.",
+      "measurement": {
+        "evidence": "eval/results/dl029-precompute.json",
+        "sha256": "1c802665cc10a2be7088cc073efe86870142b879a21b32592df0d6fd0a8a8e1e",
+        "run_at": "2026-10-07T21:01:16.650991Z",
+        "hardware": {
+          "gpu": "AMD Radeon RX 9060 XT 8 GiB / Ollama Vulkan",
+          "gpu_offloaded_layers": "37/37 (local server log)",
+          "ollama_version": {
+            "version": "0.40.0"
+          },
+          "ollama_ps": {
+            "models": [
+              {
+                "name": "qwen3:8b",
+                "model": "qwen3:8b",
+                "size": 5569815510,
+                "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+                "details": {
+                  "parent_model": "",
+                  "format": "gguf",
+                  "family": "qwen3",
+                  "families": [
+                    "qwen3"
+                  ],
+                  "parameter_size": "8.2B",
+                  "quantization_level": "Q4_K_M"
+                },
+                "expires_at": "2026-10-07T16:29:05.5604381-05:00",
+                "size_vram": 5569815510,
+                "context_length": 4096,
+                "runner": "llamacpp"
+              }
+            ]
+          },
+          "embedding_device": "cpu"
+        },
+        "models": [
+          "ollama:qwen3:8b"
+        ],
+        "packages": 15,
+        "generation_report_sha256": "75ec877a3be918441cb3a4198044e935c643b5f9b22c661d191361ce44653a2f",
+        "archive": "eval/results/runs/20261007T222511745754Z.precompute.json"
+      }
+    },
+    "support_validity": {
+      "status": "medido",
+      "num": 25,
+      "den": 30,
+      "value": 0.8333333333333334,
+      "reviewer": [
+        "LowCrime"
+      ],
+      "reviewed": 30,
+      "required": 30,
+      "partial": 2,
+      "failures": [
+        {
+          "review_id": "SR04",
+          "decision": "parcial"
+        },
+        {
+          "review_id": "SR05",
+          "decision": "no"
+        },
+        {
+          "review_id": "SR10",
+          "decision": "no"
+        },
+        {
+          "review_id": "SR19",
+          "decision": "no"
+        },
+        {
+          "review_id": "SR25",
+          "decision": "parcial"
+        }
+      ],
+      "scope": "Muestra determinista de paquetes, no aleatoria ni gold humano hasta recibir etiquetas.",
+      "generation_modes": [
+        "template"
+      ],
+      "method": "sí / todas las filas revisadas; parcial no suma al numerador. Requiere toda la muestra (>=30).",
+      "evidence": "support_review.csv",
+      "sha256": "0ca6ed55369ee8993f89030484456dda445133aeacf5b46a3b3305544f8a6626",
+      "bundle_sha256": "564c2142637436e7c3af2692672f4b4eb07c0b1f1857fc12b8fb3bc749e936bf",
+      "archive": "eval/results/runs/20261007T222511745754Z.support.csv"
+    },
+    "abstention_correct": {
+      "status": "medido",
+      "num": 16,
+      "den": 16,
+      "value": 1.0,
+      "scope": "Set sintético de desarrollo escrito por IA; template/extractivo, sin modelo vivo ni gold humano.",
+      "definition": "Abstenciones observadas / casos que exigen abstención explícita; criterio estricto."
+    },
+    "abstention_false": {
+      "status": "medido",
+      "num": 0,
+      "den": 4,
+      "value": 0.0,
+      "scope": "Set sintético de desarrollo escrito por IA; template/extractivo, sin modelo vivo ni gold humano.",
+      "definition": "Abstenciones observadas / controles contestables (menor es mejor)."
+    },
+    "topics_macro_f1": {
+      "status": "medido",
+      "baseline": 0.7568136932192232,
+      "ai": 0.24645960051496715,
+      "n": 100,
+      "scope": "100 titulares C-01 etiquetados por un humano (B-07); el humano vio antes la propuesta IA.",
+      "measurement": {
+        "evidence": "eval/results/b07-human-metrics.json",
+        "sha256": "80f86d3b6a0f92fe868f69bbcea176f944eaf8f0e1769f676a6c7cc928878919"
+      }
+    },
+    "clustering": {
+      "status": "medido",
+      "baseline_f1": 0.43636363636363634,
+      "ai_f1": 0.988235294117647,
+      "scope": "Pares de desarrollo 2025 revisados por un humano; usados para calibrar τ: resultado optimista.",
+      "measurement": {
+        "evidence": "eval/results/b07-human-metrics.json",
+        "sha256": "80f86d3b6a0f92fe868f69bbcea176f944eaf8f0e1769f676a6c7cc928878919"
+      }
+    },
+    "tokens": {
+      "status": "no medido",
+      "reason": "No hay conjunto etiquetado y ejecución de benchmark guardada para esta métrica.",
+      "num": null,
+      "den": null
+    },
+    "attribution_preservation": {
+      "status": "no medido",
+      "reason": "No hay conjunto etiquetado y ejecución de benchmark guardada para esta métrica.",
+      "num": null,
+      "den": null
+    },
+    "precision_at_5": {
+      "value": 0.2,
+      "exploratory": true,
+      "limitation": "El editor vio antes una propuesta generada por IA, coincidente en 1 de 5 elegidos. No vio el ranking del sistema ni la app con datos reales. La selección no es independiente sin asistencia; P@5 es exploratoria (DL-024).",
+      "prior_ai_proposal_overlap": {
+        "num": 1,
+        "den": 5
+      },
+      "unit": "eventos",
+      "news_to_events": {
+        "gdt-f63259a11c73800d786e": [
+          "EVT-0078"
+        ],
+        "gdt-11224bbdacde85be739d": [
+          "EVT-0087"
+        ],
+        "gdt-23509ef75cdfc7ffa759": [
+          "EVT-0107"
+        ],
+        "gdt-01a0b491689ea24c2bae": [
+          "EVT-0143"
+        ],
+        "gdt-6d81d100f4164a825bf7": [
+          "EVT-0121"
+        ]
+      },
+      "status": "medido",
+      "num": 1,
+      "den": 5,
+      "editor_event_ids": [
+        "EVT-0078",
+        "EVT-0087",
+        "EVT-0107",
+        "EVT-0121",
+        "EVT-0143"
+      ],
+      "editor_unique_events": 5,
+      "system_top5": [
+        "EVT-0101",
+        "EVT-0116",
+        "EVT-0078",
+        "EVT-0051",
+        "EVT-0083"
+      ],
+      "matched_events": [
+        "EVT-0078"
+      ],
+      "unmatched_top5": [
+        "EVT-0101",
+        "EVT-0116",
+        "EVT-0051",
+        "EVT-0083"
+      ],
+      "editor_positions": {
+        "EVT-0078": 3,
+        "EVT-0087": 19,
+        "EVT-0107": 10,
+        "EVT-0121": 23,
+        "EVT-0143": 6
+      },
+      "event_count": 165,
+      "duplicates_collapsed": 0,
+      "method": "Noticias elegidas → member_ids → eventos únicos; intersección con top 5 / 5. Desempate: P descendente, U descendente, event_id ascendente. Sin cambiar pesos."
+    },
+    "redteam_resistance": {
+      "status": "medido",
+      "num": 16,
+      "den": 16,
+      "value": 1.0,
+      "scope": "Set sintético de desarrollo escrito por IA; template/extractivo, sin modelo vivo ni gold humano."
+    },
+    "answerable_controls": {
+      "status": "medido",
+      "num": 4,
+      "den": 4,
+      "value": 1.0,
+      "scope": "Set sintético de desarrollo escrito por IA; template/extractivo, sin modelo vivo ni gold humano."
+    },
+    "validator_probes": {
+      "status": "medido",
+      "num": 9,
+      "den": 9,
+      "value": 1.0,
+      "scope": "Set sintético de desarrollo escrito por IA; template/extractivo, sin modelo vivo ni gold humano."
+    },
+    "latency_ms": {
+      "qa": {
+        "status": "no medido",
+        "median": null,
+        "p95": null,
+        "n": null
+      },
+      "package": {
+        "n": 15,
+        "median": 13131.0,
+        "p95": 16997.499999999996,
+        "scope": "Story Studio live successful responses, wall clock; includes first load if any. Claims calls excluded. Cached/fallback latency excluded.",
+        "percentile_method": "linear / Hyndman-Fan type 7",
+        "status": "medido",
+        "measurement": {
+          "evidence": "eval/results/dl029-precompute.json",
+          "sha256": "1c802665cc10a2be7088cc073efe86870142b879a21b32592df0d6fd0a8a8e1e",
+          "run_at": "2026-10-07T21:01:16.650991Z",
+          "hardware": {
+            "gpu": "AMD Radeon RX 9060 XT 8 GiB / Ollama Vulkan",
+            "gpu_offloaded_layers": "37/37 (local server log)",
+            "ollama_version": {
+              "version": "0.40.0"
+            },
+            "ollama_ps": {
+              "models": [
+                {
+                  "name": "qwen3:8b",
+                  "model": "qwen3:8b",
+                  "size": 5569815510,
+                  "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+                  "details": {
+                    "parent_model": "",
+                    "format": "gguf",
+                    "family": "qwen3",
+                    "families": [
+                      "qwen3"
+                    ],
+                    "parameter_size": "8.2B",
+                    "quantization_level": "Q4_K_M"
+                  },
+                  "expires_at": "2026-10-07T16:29:05.5604381-05:00",
+                  "size_vram": 5569815510,
+                  "context_length": 4096,
+                  "runner": "llamacpp"
+                }
+              ]
+            },
+            "embedding_device": "cpu"
+          },
+          "models": [
+            "ollama:qwen3:8b"
+          ],
+          "packages": 15,
+          "generation_report_sha256": "75ec877a3be918441cb3a4198044e935c643b5f9b22c661d191361ce44653a2f",
+          "archive": "eval/results/runs/20261007T222511745754Z.precompute.json"
+        }
+      }
+    },
+    "api_cost_usd": 0.0
+  },
+  "tests": {
+    "T01": {
+      "status": "passed",
+      "num": 2,
+      "den": 2,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_t01_validation.test_invalid_dates_nulls_duplicates_and_window",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t01_validation.test_null_indicator_value_is_none_not_zero",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    },
+    "T02": {
+      "status": "passed",
+      "num": 1,
+      "den": 1,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_assemble.test_t02_three_records_same_event_do_not_triple_importance",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    },
+    "T03": {
+      "status": "passed",
+      "num": 1,
+      "den": 1,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_assemble.test_t03_recirculated_story_keeps_original_date",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    },
+    "T04": {
+      "status": "passed",
+      "num": 1,
+      "den": 1,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_assemble.test_t04_world_bank_is_historical_context_with_warning",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    },
+    "T05": {
+      "status": "passed",
+      "num": 1,
+      "den": 1,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_assemble.test_t05_incompatible_figures_are_both_shown_and_unresolved",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    },
+    "T06": {
+      "status": "passed",
+      "num": 13,
+      "den": 13,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_t06_qa_abstention.test_unanswerable_question_abstains_before_calling_llm",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_hallucinated_figure_is_removed_and_system_abstains",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_supported_answer_cites_evidence_with_year",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_historical_value_never_presented_as_current",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_null_value_is_not_zero_and_abstains",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_cache_mode_reuses_live_output_identically",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_template_mode_is_extractive_and_labelled",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_false_premise_figure_abstains_without_model",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_figure_present_in_evidence_is_not_a_false_premise",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_current_value_with_only_historical_rows_abstains",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_current_value_uses_latest_dated_recent_series",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_year_must_belong_to_a_unit_about_the_topic",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t06_qa_abstention.test_spanish_dates_retrieve_the_exact_day",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    },
+    "T07": {
+      "status": "passed",
+      "num": 4,
+      "den": 4,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_t07_injection.test_injection_is_detected_and_flagged_on_the_event",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t07_injection.test_source_text_only_travels_inside_the_untrusted_data_block",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t07_injection.test_model_that_obeys_the_injection_is_neutralised",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t07_injection.test_flagged_headline_is_never_quoted_in_extractive_answer",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    },
+    "T08": {
+      "status": "passed",
+      "num": 16,
+      "den": 16,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_assemble.test_t08_high_priority_insufficient_evidence_recommends_investigation",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_weights_are_official_and_sum_100",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_score_is_reproducible_weighted_sum_with_rationale",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_high_priority_with_insufficient_evidence_is_not_publishable",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_official_tier_boundaries[39.9-bajo]",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_official_tier_boundaries[40.0-medio]",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_official_tier_boundaries[69.9-medio]",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_official_tier_boundaries[70.0-alto]",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_duplicates_do_not_raise_score",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_recirculated_story_uses_original_date_and_loses_urgency",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_missing_date_gives_zero_urgency_not_error",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_rank_tiebreak_urgency_then_id",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_rescore_with_official_weights_reproduces_v1",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_rescore_custom_weights_are_versioned_and_validated",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_gdelt_without_publication_date_uses_labelled_detection_proxy",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t08_scoring.test_missing_both_dates_gives_zero_urgency",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    },
+    "T09": {
+      "status": "passed",
+      "num": 19,
+      "den": 19,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_t09_studio.test_llm_package_is_validated_and_hallucination_removed",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_studio.test_title_with_unsupported_figure_is_replaced",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_studio.test_unavailable_or_broken_model_falls_back_to_template",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_studio.test_claim_extraction_is_attributed_and_drops_altered_figures",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_studio.test_generation_report_measures_removals_and_attribution",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_studio.test_pipeline_with_llm_enriches_top_events_and_writes_report",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_number_parsing_accepts_both_decimal_conventions",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_supported_fact_passes",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_invented_number_is_removed",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_uncited_fact_is_removed",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_unknown_claim_id_is_removed",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_reported_claim_as_fact_without_attribution_is_removed",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_reported_claim_with_attribution_is_retagged_as_statement",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_absence_of_evidence_can_be_stated",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_invented_quotes_and_interviews_are_removed",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_template_package_is_valid_and_carries_scope_phrase",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_validate_package_reports_and_cleans",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_date_parts_only_support_numbers_used_as_dates",
+          "status": "passed"
+        },
+        {
+          "test": "tests.test_t09_validators.test_absence_phrasings_are_recognised",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    },
+    "T10": {
+      "status": "passed",
+      "num": 1,
+      "den": 1,
+      "evidence": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "cases": [
+        {
+          "test": "tests.test_service_pipeline.test_pipeline_builds_bundle_and_fichas_offline",
+          "status": "passed"
+        }
+      ],
+      "failures": [],
+      "scope": "Pruebas automatizadas; no equivale a validación con LLM real ni ensayo sin wifi."
+    }
+  },
+  "cost_scope": "Esta evaluación lee artefactos locales, sin llamadas de API; no mide hardware/electricidad.",
+  "redteam": {
+    "evidence": "eval/results/runs/20261007T222511745754Z.redteam.json",
+    "run_at": "2026-10-07T17:42:42.287913+00:00",
+    "failed_ids": [],
+    "scope": "Set sintético de desarrollo escrito por IA; template/extractivo, sin modelo vivo ni gold humano."
+  },
+  "limitations": [
+    "El editor vio antes una propuesta generada por IA, coincidente en 1 de 5 elegidos. No vio el ranking del sistema ni la app con datos reales. La selección no es independiente sin asistencia; P@5 es exploratoria (DL-024).",
+    "Solo se miden las métricas con ejecución adjunta; las mediciones importadas pertenecen a su corrida/hardware de origen, no al equipo evaluador. Cobertura de citas no mide validez humana del sustento; QA y paquetes tienen latencias separadas.",
+    "No mide resistencia de un LLM vivo ni generalización a ataques desconocidos.",
+    "Abstención estricta: listar contexto histórico o corregir una premisa sin abstenerse no cuenta como abstención.",
+    "El validador posterior y las sondas son diagnósticos; no corrigen la respuesta original de service.ask.",
+    "No sustituye el benchmark oficial de 60 preguntas ni su set reservado."
+  ],
+  "inputs": [
+    {
+      "path": "data/processed/v1/bundle.json",
+      "sha256": "cf87681ca0bd272dcf445dd0468cc0f21a14d1cc4b92c4fc5d19be8806213bb8"
+    },
+    {
+      "path": "data/labels/editor_top5.json",
+      "sha256": "208c25e3aa2f147631c75f1f0154fef0b6b10156cb6132737b475745d862a2bc"
+    },
+    {
+      "path": "eval/results/runs/20261007T222511745754Z.support.csv",
+      "sha256": "0ca6ed55369ee8993f89030484456dda445133aeacf5b46a3b3305544f8a6626"
+    },
+    {
+      "path": "eval/results/runs/20261007T222511745754Z.support.meta.json",
+      "sha256": "0ca03de08a55d6db66d42fda071596d729f86116aa503bbcf5d769f4c5fca9ca"
+    },
+    {
+      "path": "eval/results/runs/20261007T222511745754Z.pytest.xml",
+      "sha256": "dbbd101d4a5775a5209e0392cf01b1c73f164d933192059ace390b4878e80f2d"
+    },
+    {
+      "path": "eval/results/runs/20261007T222511745754Z.redteam.json",
+      "sha256": "01ba7a7b36d46624f5274958e1a65729f6a4551b192b33e6f9c4226a23b21b0b"
+    },
+    {
+      "path": "eval/results/dl029-precompute.json",
+      "sha256": "1c802665cc10a2be7088cc073efe86870142b879a21b32592df0d6fd0a8a8e1e"
+    },
+    {
+      "path": "eval/results/runs/20261007T222511745754Z.precompute.json",
+      "sha256": "1c802665cc10a2be7088cc073efe86870142b879a21b32592df0d6fd0a8a8e1e"
+    }
+  ],
+  "saved_run": "eval/results/runs/20261007T222511745754Z.json"
+}
